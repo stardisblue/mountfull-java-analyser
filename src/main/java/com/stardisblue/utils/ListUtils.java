@@ -1,9 +1,6 @@
 package com.stardisblue.utils;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
@@ -156,7 +153,7 @@ public class ListUtils {
      * @param <U>       Type of the owned item
      * @return a concatened list of all the extracted elements
      */
-    public static <T, U> List<U> extract(List<T> array, Function<T, List<U>> extractor) {
+    public static <T, U> List<U> extract(List<T> array, Function<T, Set<U>> extractor) {
         List<U> extracted = new ArrayList<>();
 
         for (T item : array) {
